@@ -7,6 +7,7 @@ import lombok.Getter;
 
 @AllArgsConstructor @Getter
 public class AmortizationCalculator implements IAmortizationCalculator {
+
     private double principal;
     private double rate;
     private int periods;
@@ -34,8 +35,8 @@ public class AmortizationCalculator implements IAmortizationCalculator {
     public void generate(double fixedInstallment) {
         double remainingBalance = principal;
         
-        System.out.println("\nAmortization Schedule");
-        System.out.printf("Fixed installment: $%.2f\n", fixedInstallment);
+        System.out.println("\n[SYSTEM] Amortization Schedule");
+        System.out.printf("[SYSTEM] Fixed installment: $%.2f\n", fixedInstallment);
         System.out.println("------------------------------------------------");
         
         for (int i = 1; i <= periods; i++) {
@@ -43,7 +44,7 @@ public class AmortizationCalculator implements IAmortizationCalculator {
             double amortization = fixedInstallment - interest;
             remainingBalance -= amortization;
 
-            System.out.printf("Installment %d: Interest: $%.2f, Amortization: $%.2f, Remaining Balance: $%.2f\n", i, interest, amortization, remainingBalance);
+            System.out.printf("[SYSTEM] Installment %d: Interest: $%.2f, Amortization: $%.2f, Remaining Balance: $%.2f\n", i, interest, amortization, remainingBalance);
         }
     }
 
