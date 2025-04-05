@@ -50,7 +50,7 @@ public class AmortizationCalculator implements IAmortizationCalculator {
 
     /* 3º e 4º Contexto -> Conector entre a interface requerida e fornecida */
     @Override
-    public void update(double totalAmount) {
-        this.generate(totalAmount);
+    public void update(double fixedInstallment) {
+        this.generate(fixedInstallment);
     }
 }
